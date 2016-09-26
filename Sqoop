@@ -12,7 +12,7 @@ $sqoop import \
  --fields-terminated-by '\t' \
  --warehouse -dir /mydata
  
- # Import only specified columns from product table
+# Import only specified columns from product table
  $sqoop import \
   --connect jdbc:mysql://localhost/company \
   --username twheeler --password bigsecret \
@@ -20,7 +20,7 @@ $sqoop import \
   --table products \
   --columns "prod_id,name,price"
   
- # Import only matching rows from products table
+# Import only matching rows from products table
  $sqoop import \
   --connect jdbc:mysql://localhost/company \
   --username twheeler password bigsecret \
@@ -28,7 +28,7 @@ $sqoop import \
   --table products \
   --where "price >= 1000"
   
- # Incremental imports with sqoop
+# Incremental imports with sqoop
  $sqoop import \
   --connect jdbc:mysql://localhost/company \
   --username twheeler  --password bigsecret \
@@ -37,6 +37,7 @@ $sqoop import \
   --incremental append \
   --check-column order_id \
   --last_value 6713822 
+
 # Modify exisiting records
 $sqoop import \
  --connect jdbc:mysql://localhost/company \
