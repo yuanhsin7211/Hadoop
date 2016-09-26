@@ -28,7 +28,7 @@ $sqoop import \
   --table products \
   --where "price >= 1000"
   
- #Incremental imports with sqoop
+ # Incremental imports with sqoop
  $sqoop import \
   --connect jdbc:mysql://localhost/company \
   --username twheeler  --password bigsecret \
@@ -37,3 +37,12 @@ $sqoop import \
   --incremental append \
   --check-column order_id \
   --last_value 6713822 
+# Modify exisiting records
+$sqoop import \
+ --connect jdbc:mysql://localhost/company \
+ --username twheeler --password bigsecret
+ --warehouse-dir /mydata \
+ --table shipments \
+ --incremental lastmodified \
+ --check-column last_update_date \
+ --last_value "2016-09-26 02:41:59" 
