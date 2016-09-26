@@ -1,0 +1,13 @@
+# Create /mydata/customers directory in HDFS
+$sqoop import \
+ --connect jdbc:mysql://localhost/company \
+ --username twheeler --password bigsecret \
+ --warehouse-dir /mydata \
+ --table customers
+
+# Import all tables from the database (fields will be tab-delimited, default: comma-delimited)
+$sqoop import \
+ --connect jdbs:mysql://localhost/company \
+ --username twheeler --password bigsecret \
+ --fields-terminated-by '\t' \
+ --warehouse -dir /mydata
