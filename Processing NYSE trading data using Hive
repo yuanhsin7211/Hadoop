@@ -1,4 +1,3 @@
-Project 4: Processing NYSE trading data using Hive 
 -- In this project, it used Hive to process the NYSE trading data on daily price. 
 -- The different file types and formats available in Hive and how to create & load data into Hive tables.
 
